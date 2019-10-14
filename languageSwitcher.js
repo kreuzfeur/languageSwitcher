@@ -1,5 +1,5 @@
 export default class LanguageSwitcher {
-    constructor(defaultLanguage, selectedLanguage, languages) {
+    constructor(languages) {
         this.languages = languages;
         this.createSwitcher();
     }
@@ -17,13 +17,11 @@ export default class LanguageSwitcher {
     }
     createSwitcher = () => {
         const selectBox = document.createElement('select');
-        selectBox.addEventListener('onchange', () => {
-            console.log('s')
-        })
+        selectBox.id = 'languageSwitcher';
         let cssText = '';
         for (const styleProp in this.switcherStyle) {
-            if(styleProp === 'borderRadius') cssText += `border-radius:${this.switcherStyle[styleProp]};`;
-            if(styleProp === 'textAlign') cssText += `text-align:${this.switcherStyle[styleProp]};`;
+            if (styleProp === 'borderRadius') cssText += `border-radius:${this.switcherStyle[styleProp]};`;
+            if (styleProp === 'textAlign') cssText += `text-align:${this.switcherStyle[styleProp]};`;
             cssText += `${styleProp}:${this.switcherStyle[styleProp]};`;
         }
         selectBox.style.cssText = cssText;
