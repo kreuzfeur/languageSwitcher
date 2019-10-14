@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let setLanguage = new ChangeLanguage(languages, url);
     const createSwitcher = new LanguageSwitcher(languages);
     document.getElementById('languageSwitcher').onchange = (evt) => {
-        let setLanguage = new ChangeLanguage(languages, url, evt.target.value);
+        setLanguage = new ChangeLanguage(languages, url, evt.target.value);
     }
 
 });
